@@ -1,0 +1,326 @@
+body {
+    background-color: #0D0D0D;
+    font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#loadingScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999999999999999;
+}
+
+.sk-folding-cube {
+    margin: 20px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.sk-folding-cube .sk-cube:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+    animation: sk-foldCubeAngle 2.4s infinite linear both;
+    -webkit-transform-origin: 100% 100%;
+    -ms-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+}
+
+.sk-folding-cube .sk-cube2 {
+    -webkit-transform: scale(1.1) rotateZ(90deg);
+    transform: scale(1.1) rotateZ(90deg);
+}
+
+.sk-folding-cube .sk-cube3 {
+    -webkit-transform: scale(1.1) rotateZ(180deg);
+    transform: scale(1.1) rotateZ(180deg);
+}
+
+.sk-folding-cube .sk-cube4 {
+    -webkit-transform: scale(1.1) rotateZ(270deg);
+    transform: scale(1.1) rotateZ(270deg);
+}
+
+.sk-folding-cube .sk-cube2:before {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.sk-folding-cube .sk-cube3:before {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+
+.sk-folding-cube .sk-cube4:before {
+    -webkit-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+}
+
+@-webkit-keyframes sk-foldCubeAngle {
+    0%, 10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%, 75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%, 100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sk-foldCubeAngle {
+    0%, 10% {
+        -webkit-transform: perspective(140px) rotateX(-180deg);
+        transform: perspective(140px) rotateX(-180deg);
+        opacity: 0;
+    }
+    25%, 75% {
+        -webkit-transform: perspective(140px) rotateX(0deg);
+        transform: perspective(140px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%, 100% {
+        -webkit-transform: perspective(140px) rotateY(180deg);
+        transform: perspective(140px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+#closeBtn {
+    display: none;
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 240px;
+    z-index: 9999;
+    background-color: #000;
+}
+
+.movies-bar {
+    height: 50%;
+}
+
+.movies-bar a {
+    margin: 500px 0;
+    opacity: 0;
+}
+
+aside a {
+    color: #f9f6f6;
+    font-weight: 500;
+    font-size: 17px;
+    transition: all 0.2s;
+    display: block;
+    margin: 20px 0;
+}
+
+aside a:hover {
+    color: #ff655c;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 20px 8px;
+    font-size: 14px;
+}
+
+aside p {
+    color: #999;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.menu-bar {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 60px;
+    z-index: 99999;
+    background-color: #f8f6f6;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.menu-bar img[alt='logo'] {
+    width: 30px;
+    cursor: pointer;
+}
+
+.menu-bar i {
+    color: #000;
+    cursor: pointer;
+}
+
+.menu-icon i {
+    font-size: 25px;
+}
+
+.form-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 0;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.form-control::placeholder {
+    text-align: center;
+}
+
+.form-control:focus {
+    background-color: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.7);
+    box-shadow: none;
+}
+
+.overlay {
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: #000;
+    font-weight: 800;
+    transform: translateY(100%);
+    transition: all 1s;
+}
+
+.movie-desc:hover .overlay {
+    transform: translateY(0%);
+}
+
+.eye-icon {
+    position: absolute;
+    top: 12px;
+    right: 9px;
+    z-index: 2151;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.eye-slash {
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    right: 9px;
+    z-index: 2151;
+    color: #fff;
+    cursor: pointer;
+}
+
+.alert {
+    display: none;
+}
+
+.is-valid, .is-invalid {
+    background-image: none !important;
+}
+
+.is-valid:focus {
+    box-shadow: none !important;
+}
+
+.is-invalid:focus {
+    box-shadow: none !important;
+}
+
+/* ********************************************************* Media-Query ********************************************************* */
+
+@media screen and (min-width:992px) and (max-width:1200px) {
+    .menu-bar {
+        width: 50px;
+    }
+    .menu-bar img[alt='logo'] {
+        width: 25px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .movies-bar {
+        height: 65%;
+    }
+    .menu-bar {
+        width: 40px;
+    }
+    .menu-bar img[alt='logo'] {
+        width: 20px;
+    }
+}
+
+@media screen and (min-width:600px) and (max-width:767px) {
+    .movies-bar {
+        height: 60%;
+    }
+    .menu-bar {
+        width: 50px;
+    }
+    .menu-bar img[alt='logo'] {
+        width: 25px;
+    }
+}
+
+@media screen and (max-width:599px) {
+    .movies-bar {
+        height: 75%;
+    }
+    .menu-bar {
+        width: 25px;
+    }
+    .menu-bar img[alt='logo'] {
+        width: 15px;
+    }
+    aside {
+        width: 150px;
+    }
+    .form-control {
+        text-align: center;
+    }
+}
