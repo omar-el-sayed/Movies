@@ -17,43 +17,46 @@
             </div>
         </div>
 
-        <div class="menu-bar py-4 d-flex justify-content-between flex-column">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/logo.png" alt="logo">
-                </a>
-            </div>
-            <div class="menu-icon">
-                <i id="openBtn" class="fas fa-align-justify"></i>
-                <i id="closeBtn" class="fas fa-times"></i>
-            </div>
-            <div>
-                <div class="my-2">
-                    <i class="fas fa-globe"></i>
+        <aside>
+            <div id="sideBar" class="py-3 px-4 d-flex justify-content-between flex-column overflow-hidden">
+                <div class="movies-bar overflow-hidden">
+                    <a>Now Playing</a>
+                    <a>Popular</a>
+                    <a>Top Rated</a>
+                    <a>Trending</a>
+                    <a>Upcoming</a>
+                    <a href="#contactUs">Contact Us</a>
                 </div>
-                <div class="mt-3">
-                    <i class="fas fa-share-alt"></i>
+                <div>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/omarsayed26/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/omar-el-sayed/" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/omar-el-sayed" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                    <p>Copyright &copy; 2021 All Rights Reserved.</p>
                 </div>
             </div>
-        </div>
 
-        <aside class="py-3 px-4 d-flex justify-content-between flex-column overflow-hidden">
-            <div class="movies-bar overflow-hidden">
-                <a href="#now_playing">Now Playing</a>
-                <a href="#popular">Popular</a>
-                <a href="#top_rated">Top Rated</a>
-                <a href="#trending">Trending</a>
-                <a href="#upcoming">Upcoming</a>
-                <a href="#contactUs">Contact Us</a>
-            </div>
-            <div>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/omarsayed26/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/in/omar-el-sayed/" target="_blank"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/omar-el-sayed" target="_blank"><i class="fab fa-github"></i></a>
+            <div id="menuBar" class="py-4 d-flex justify-content-between align-items-center flex-column">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" class="w-100" alt="logo">
+                    </a>
                 </div>
-                <p>Copyright &copy; 2021 All Rights Reserved.</p>
+                <div class="menu-icon">
+                    <i id="openBtn" class="fas fa-align-justify"></i>
+                    <i id="closeBtn" class="fas fa-times"></i>
+                </div>
+                <div>
+                    <div class="my-2">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="mt-3">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                </div>
             </div>
         </aside>
 
@@ -118,7 +121,9 @@
                             <div class="alert alert-danger mt-3">Your password is not true</div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-danger m-3">Submit</button>
+                    <div class="submit-btn">
+                        <button type="submit" class="btn btn-outline-danger m-3">Submit</button>
+                    </div>
                 </div>
             </div>
         </section>

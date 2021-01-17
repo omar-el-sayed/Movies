@@ -126,29 +126,32 @@ a:hover {
     }
 }
 
-#closeBtn {
-    display: none;
-}
-
 aside {
     position: fixed;
     top: 0;
-    height: 100%;
-    width: 240px;
-    z-index: 9999;
+    left: 0;
+    z-index: 999999;
+    width: 300px;
+    height: 100vh;
+    display: flex;
+}
+
+#sideBar {
     background-color: #000;
+    width: 80%;
+    height: 100%;
 }
 
 .movies-bar {
     height: 50%;
 }
 
-.movies-bar a {
+#sideBar .movies-bar a {
     margin: 500px 0;
-    opacity: 0;
+    cursor: pointer;
 }
 
-aside a {
+#sideBar a {
     color: #f9f6f6;
     font-weight: 500;
     font-size: 17px;
@@ -157,45 +160,45 @@ aside a {
     margin: 20px 0;
 }
 
-aside a:hover {
+#sideBar a:hover {
     color: #ff655c;
 }
 
-.social-icons a {
+#sideBar .social-icons a {
     display: inline-block;
     margin: 20px 8px;
     font-size: 14px;
 }
 
-aside p {
+#sideBar p {
     color: #999;
     font-size: 16px;
     margin-bottom: 30px;
 }
 
-.menu-bar {
-    position: fixed;
-    top: 0;
+#menuBar {
     height: 100%;
-    width: 60px;
-    z-index: 99999;
+    width: 20%;
     background-color: #f8f6f6;
     text-align: center;
     transition: all 0.5s;
 }
 
-.menu-bar img[alt='logo'] {
+#menuBar .logo {
     width: 30px;
-    cursor: pointer;
 }
 
-.menu-bar i {
+#menuBar i {
     color: #000;
     cursor: pointer;
 }
 
-.menu-icon i {
+#menuBar i {
     font-size: 25px;
+}
+
+#closeBtn {
+    display: none;
 }
 
 .form-control {
@@ -272,55 +275,8 @@ aside p {
     box-shadow: none !important;
 }
 
-/* ********************************************************* Media-Query ********************************************************* */
-
-@media screen and (min-width:992px) and (max-width:1200px) {
-    .menu-bar {
-        width: 50px;
-    }
-    .menu-bar img[alt='logo'] {
-        width: 25px;
-    }
-}
-
-@media screen and (min-width:768px) and (max-width:991px) {
-    .movies-bar {
-        height: 65%;
-    }
-    .menu-bar {
-        width: 40px;
-    }
-    .menu-bar img[alt='logo'] {
-        width: 20px;
-    }
-}
-
-@media screen and (min-width:600px) and (max-width:767px) {
-    .movies-bar {
-        height: 60%;
-    }
-    .menu-bar {
-        width: 50px;
-    }
-    .menu-bar img[alt='logo'] {
-        width: 25px;
-    }
-}
-
-@media screen and (max-width:599px) {
-    .movies-bar {
-        height: 75%;
-    }
-    .menu-bar {
-        width: 25px;
-    }
-    .menu-bar img[alt='logo'] {
-        width: 15px;
-    }
-    aside {
-        width: 150px;
-    }
-    .form-control {
-        text-align: center;
+@media screen and (max-width:768px) {
+    #contactUs .submit-btn {
+        margin: auto;
     }
 }

@@ -1,5 +1,10 @@
 $(document).ready(function () {
+    $("#loadingScreen").fadeOut(2000, function () {
+        $("body").css("overflow", "visible")
+    });
+
     let aside = $("aside");
+    let sideBar = $("#sideBar");
     let fullNameInput = $("#fullName");
     let emailAddressInput = $("#emailAddress");
     let phoneNumberInput = $("#phoneNumber");
@@ -59,33 +64,30 @@ $(document).ready(function () {
     }
     $("#movieDesc").keyup(function () {
         searchByRate(this.value);
-    })
+    });
 
-    aside.css("left", `-${aside.innerWidth()}px`);
+    aside.css("left", -sideBar.innerWidth());
     $("#openBtn").click(function () {
-        $(".menu-bar").animate({ left: aside.innerWidth() }, 450);
+        aside.animate({ left: "0px" }, 600);
         $("#openBtn").fadeOut(200, function () {
-            aside.animate({ left: '0px' }, 600);
             $("#closeBtn").fadeIn(200);
-            for (let i = 0; i < $(".movies-bar a").length; i++) {
-                $(".movies-bar a").eq(i).animate({ opacity: '1', margin: '20px 0' }, 1000);
+            for (let i = 0; i < $("#sideBar .movies-bar a").length; i++) {
+                $("#sideBar .movies-bar a").eq(i).animate({ margin: '20px 0' }, 700);
             }
         });
-
     });
 
     $("#closeBtn").click(function () {
-        $(".menu-bar").animate({ left: "0px" }, 300);
         $("#closeBtn").fadeOut(200, function () {
-            aside.animate({ left: `-${aside.innerWidth()}px` }, 600);
-            $("#openBtn").fadeIn(200);
-            for (let i = 0; i < $(".movies-bar a").length; i++) {
-                $(".movies-bar a").eq(i).animate({ opacity: '0', margin: '500px 0' }, 50);
+            aside.animate({ left: -sideBar.innerWidth() }, 600);
+            for (let i = 0; i < $("#sideBar .movies-bar a").length; i++) {
+                $("#sideBar .movies-bar a").eq(i).animate({ margin: '500px 0' }, 50);
             }
+            $("#openBtn").fadeIn(200);
         });
     });
 
-    $("aside .movies-bar a").click(function () {
+    $("#sideBar .movies-bar a").click(function () {
         let contactOffset = $("#contactUs").offset().top;
         let movieSection = $(this).text();
         if (movieSection == "Now Playing") {
@@ -219,9 +221,5 @@ $(document).ready(function () {
         userPasswordInput.attr("type", "password");
         $(".eye-icon").css("display", "none");
         $(".eye-slash").css("display", "inline-block");
-    });
-
-    $("#loadingScreen").slideUp(1000, function () {
-        $("body").css("overflow", "visible")
     });
 });
